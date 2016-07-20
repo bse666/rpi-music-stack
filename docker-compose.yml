@@ -20,7 +20,7 @@ services:
     networks:
       - music_stack
     volumes:
-      - /home/pirate/music:/var/lib/mpd/music
+      - ./music:/var/lib/mpd/music
 #      - /path/to/mpd_playlists:/var/lib/mpd/playlists
 #      - /path/to/mpd_database:/var/lib/mpd/database
     restart: always
