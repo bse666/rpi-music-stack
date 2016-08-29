@@ -6,6 +6,7 @@ services:
     build: ./icecast
     ports:
       - "8000:8000"
+      - "8001:8001"
     networks:
       - music_stack
     restart: always
@@ -13,8 +14,10 @@ services:
   # Add your host volumen in path/to/... or add your own volume below
   mpd:
     build: ./mpd
+    #image: bse666/rpi-mopidy
     ports:
       - "6600:6600"
+      - "6680:6680"
     depends_on:
       - icecast
     networks:
