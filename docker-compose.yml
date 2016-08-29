@@ -1,26 +1,32 @@
-icecast:
-  #image: vitiman/alpine-icecast:latest
-  build: ./icecast
-  ports:
-    - "8000:8000"
-  networks:
-    - music_stack
-  restart: always
+version: '2'
 
-# Add your host volumen in path/to/... or add your own volume below
-mpd:
-  build: ./mpd
-  ports:
-    - "6600:6600"
-  depends_on:
-    - icecast
-  networks:
-    - music_stack
-  volumes:
-    - ./music:/var/lib/mpd/music
+services:
+  icecast:
+    #image: vitiman/alpine-icecast:latest
+    build: ./icecast
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+    networks:
+      - music_stack
+    restart: always
+
+  # Add your host volumen in path/to/... or add your own volume below
+  mpd:
+    build: ./mpd
+    #image: bse666/rpi-mopidy
+    ports:
+      - "6600:6600"
+      - "6680:6680"
+    depends_on:
+      - icecast
+    networks:
+      - music_stack
+    volumes:
+      - /home/pirate/music:/var/lib/mpd/music
 #      - /path/to/mpd_playlists:/var/lib/mpd/playlists
 #      - /path/to/mpd_database:/var/lib/mpd/database
-  restart: always
+    restart: always
 
   #sima:
   #  #image: vitiman/alpine-sima:latest
@@ -31,16 +37,16 @@ mpd:
   #    - music_stack
     #restart: always
 
-ympd:
-  #image: vitiman/alpine-ympd:latest
-  build: ./ympd
-  ports:
-    - "8080:8080"
-  depends_on:
-    - mpd
-  networks:
-    - music_stack
-  restart: always
+  ympd:
+    #image: vitiman/alpine-ympd:latest
+    build: ./ympd
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mpd
+    networks:
+      - music_stack
+    restart: always
 
 networks:
   music_stack:
