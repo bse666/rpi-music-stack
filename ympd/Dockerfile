@@ -1,4 +1,4 @@
-FROM hypriot/rpi-alpine-scratch
+FROM alpine
 
 # docker run -p 8080:8080 --net music_stack --name=ympd -d alpine-ympd:dev
 
