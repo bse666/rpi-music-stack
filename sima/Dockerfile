@@ -1,4 +1,4 @@
-FROM hypriot/rpi-alpine-scratch
+FROM alpine
 
 ENV SIMA_VERSION 0.14.1
 ENV PYTHON_VERSION 3.5.1-r0
