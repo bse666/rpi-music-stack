@@ -3,7 +3,7 @@ version: '3.3'
 services:
   icecast:
     #image: vitiman/alpine-icecast:latest
-    build: ./icecast
+    build: icecast
     ports:
       - "8000:8000"
       - "8001:8001"
@@ -13,7 +13,7 @@ services:
 
   # Add your host volumen in path/to/... or add your own volume below
   mpd:
-    build: ./mpd
+    build: mpd
     #image: bse666/rpi-mopidy
     ports:
       - "6600:6600"
@@ -37,7 +37,7 @@ services:
 
   ympd:
     #image: vitiman/alpine-ympd:latest
-    build: ./ympd
+    build: ympd
     ports:
       - "8080:8080"
     networks:
