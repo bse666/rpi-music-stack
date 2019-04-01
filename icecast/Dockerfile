@@ -1,4 +1,4 @@
-FROM hypriot/rpi-alpine-scratch
+FROM alpine
 
 ENV ICECAST_VERSION 2.4.2-r1
 
