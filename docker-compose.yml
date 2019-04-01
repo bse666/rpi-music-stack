@@ -3,7 +3,6 @@ version: '2'
 services:
   mpd:
     build: mpd
-    #image: bse666/rpi-mopidy
     ports:
       - "6600:6600"
       - "6680:6680"
