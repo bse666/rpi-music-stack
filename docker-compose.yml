@@ -18,8 +18,6 @@ services:
     ports:
       - "6600:6600"
       - "6680:6680"
-#    depends_on:
-#      - icecast
     networks:
       - music_stack
     volumes:
@@ -42,8 +40,6 @@ services:
     build: ./ympd
     ports:
       - "8080:8080"
-#    depends_on:
-#      - mpd
     networks:
       - music_stack
     restart: always
