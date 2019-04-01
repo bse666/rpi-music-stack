@@ -1,4 +1,4 @@
-version: '3.3'
+version: '2'
 
 services:
   icecast:
@@ -9,7 +9,7 @@ services:
       - "8001:8001"
     networks:
       - music_stack
-    restart: always
+    #restart: always
 
   # Add your host volumen in path/to/... or add your own volume below
   mpd:
@@ -24,7 +24,7 @@ services:
       - /home/pirate/music:/var/lib/mpd/music
 #      - /path/to/mpd_playlists:/var/lib/mpd/playlists
 #      - /path/to/mpd_database:/var/lib/mpd/database
-    restart: always
+    #restart: always
 
   #sima:
   #  #image: vitiman/alpine-sima:latest
@@ -42,7 +42,7 @@ services:
       - "8080:8080"
     networks:
       - music_stack
-    restart: always
+    #restart: always
 
 networks:
   music_stack:
