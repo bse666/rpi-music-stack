@@ -4,7 +4,7 @@ services:
 
 env:
   COMPOSE_VERSION: 1.4.1
-
+# yes
 before_install:
  - curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
  - chmod +x docker-compose
