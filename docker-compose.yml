@@ -3,11 +3,3 @@ version: '2'
 services:
   mpd:
     build: mpd
-    ports:
-      - "6600:6600"
-      - "6680:6680"
-    networks:
-      - music_stack
-    volumes:
-      - /home/pirate/music:/var/lib/mpd/music
-
